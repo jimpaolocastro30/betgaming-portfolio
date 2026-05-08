@@ -55,7 +55,7 @@ export default function GameCategories() {
       <h3 className="text-sm font-semibold">Game Categories</h3>
 
       {/* Category Tabs */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -75,7 +75,7 @@ export default function GameCategories() {
       {Object.entries(filteredGames).map(([category, gameList]) => (
         <div key={category}>
           <h4 className="text-xs font-semibold text-red-400 mb-3">{category}</h4>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {gameList.map((game) => (
               <GameCard key={game.name} name={game.name} image={game.image} />
             ))}

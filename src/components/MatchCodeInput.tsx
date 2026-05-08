@@ -7,7 +7,7 @@ export default function MatchCodeInput() {
   const [code, setCode] = useState("");
 
   return (
-    <div className="border-2 border-red-600 rounded-lg p-3 flex items-center gap-3">
+    <div className="border-2 border-red-600 rounded-lg p-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
       <span className="text-sm font-semibold text-white whitespace-nowrap">Enter Match Code</span>
       <input
         type="text"
@@ -16,10 +16,12 @@ export default function MatchCodeInput() {
         onChange={(e) => setCode(e.target.value)}
         className="input-dark flex-1 text-sm"
       />
-      <button className="btn-primary text-sm whitespace-nowrap">Join Match</button>
-      <button className="text-gray-500 hover:text-white">
-        <HelpCircle className="w-5 h-5" />
-      </button>
+      <div className="flex items-center gap-2">
+        <button className="btn-primary text-sm whitespace-nowrap flex-1 sm:flex-none">Join Match</button>
+        <button className="text-gray-500 hover:text-white">
+          <HelpCircle className="w-5 h-5" />
+        </button>
+      </div>
     </div>
   );
 }

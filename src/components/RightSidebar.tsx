@@ -19,7 +19,7 @@ const announcements = [
 
 export default function RightSidebar() {
   return (
-    <aside className="w-[260px] flex-shrink-0 space-y-4">
+    <aside className="w-full xl:w-[260px] flex-shrink-0 space-y-4">
       {/* Ongoing Matches / Create Match */}
       <div className="card p-4 space-y-4">
         <div className="flex items-center justify-between">

@@ -17,7 +17,7 @@ export default function LeftSidebar() {
   const [message, setMessage] = useState("");
 
   return (
-    <aside className="w-[220px] flex-shrink-0 flex flex-col gap-4">
+    <aside className="w-full xl:w-[220px] flex-shrink-0 flex flex-col gap-4">
       {/* Login Box */}
       <div className="card p-4">
         <div className="space-y-3">

@@ -11,9 +11,11 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1 max-w-[1400px] mx-auto w-full px-4 py-4">
-        <div className="flex gap-4">
-          {/* Left Sidebar */}
-          <LeftSidebar />
+        <div className="flex flex-col xl:flex-row gap-4">
+          {/* Left Sidebar - hidden on mobile, shown on xl */}
+          <div className="hidden xl:block">
+            <LeftSidebar />
+          </div>
 
           {/* Main Content */}
           <div className="flex-1 min-w-0 space-y-4">
@@ -23,8 +25,15 @@ export default function Home() {
             <GameCategories />
           </div>
 
-          {/* Right Sidebar */}
-          <RightSidebar />
+          {/* Right Sidebar - stacks below on mobile */}
+          <div className="xl:block">
+            <RightSidebar />
+          </div>
+        </div>
+
+        {/* Left Sidebar content on mobile (below main) */}
+        <div className="xl:hidden mt-4">
+          <LeftSidebar />
         </div>
       </main>
     </div>

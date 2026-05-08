@@ -13,7 +13,7 @@ const links = [
 
 export default function QuickLinks() {
   return (
-    <div className="flex items-center justify-center gap-6 py-4 border-b border-gray-800">
+    <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 py-4 border-b border-gray-800">
       {links.map((link) => (
         <button
           key={link.label}
@@ -22,7 +22,7 @@ export default function QuickLinks() {
           <link.icon className="w-4 h-4 text-gray-500 group-hover:text-primary" />
           <div className="text-left">
             <p className="text-xs font-medium">{link.label}</p>
-            <p className="text-[10px] text-gray-600">{link.sub}</p>
+            <p className="text-[10px] text-gray-600 hidden sm:block">{link.sub}</p>
           </div>
         </button>
       ))}
