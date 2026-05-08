@@ -5,12 +5,12 @@ import Image from "next/image";
 import { User, Lock, Send } from "lucide-react";
 
 const chatMessages = [
-  { user: "System", time: "23:45", message: "Anyone up for a match?", avatar: "/avatars/system.svg" },
-  { user: "BattleMaster", time: "23:45", message: "I'm in! Let's do this!", avatar: "/avatars/battlemaster.svg" },
-  { user: "No.1Player", time: "23:46", message: "What game are we playing?", avatar: "/avatars/no1player.svg" },
-  { user: "GameKing", time: "23:46", message: "I made a 15k prize match. Anyone interested?", avatar: "/avatars/gameking.svg" },
-  { user: "ChoiGamer", time: "23:47", message: "Count me in!", avatar: "/avatars/choigamer.svg" },
-  { user: "ProGamer", time: "23:48", message: "I've joined the match!", avatar: "/avatars/progamer.svg" },
+  { user: "System", time: "23:45", message: "Anyone up for a match?", avatar: "/avatars/system.png" },
+  { user: "BattleMaster", time: "23:45", message: "I'm in! Let's do this!", avatar: "/avatars/battlemaster.png" },
+  { user: "No.1Player", time: "23:46", message: "What game are we playing?", avatar: "/avatars/no1player.png" },
+  { user: "GameKing", time: "23:46", message: "I made a 15k prize match. Anyone interested?", avatar: "/avatars/gameking.png" },
+  { user: "ChoiGamer", time: "23:47", message: "Count me in!", avatar: "/avatars/choigamer.png" },
+  { user: "ProGamer", time: "23:48", message: "I've joined the match!", avatar: "/avatars/progamer.png" },
 ];
 
 export default function LeftSidebar() {
@@ -54,31 +54,31 @@ export default function LeftSidebar() {
 
       {/* Live Chat */}
       <div className="card flex-1 flex flex-col">
-        <div className="p-3 border-b border-gray-800 flex items-center justify-between">
-          <span className="font-semibold text-sm">Live Chat</span>
-          <span className="flex items-center gap-1 text-xs text-green-400">
-            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+        <div className="px-4 py-3 border-b border-gray-800 flex items-center justify-between">
+          <span className="font-bold text-base text-white">Live Chat</span>
+          <span className="flex items-center gap-1.5 text-sm font-semibold text-green-400">
+            <span className="w-2.5 h-2.5 bg-green-400 rounded-full"></span>
             120
           </span>
         </div>
-        <div className="flex-1 overflow-y-auto p-3 space-y-3 max-h-[350px]">
+        <div className="flex-1 overflow-y-auto p-3 space-y-4 max-h-[420px]">
           {chatMessages.map((msg, i) => (
-            <div key={i} className="flex gap-2">
-              <div className="w-7 h-7 rounded-full bg-dark-500 flex-shrink-0 overflow-hidden">
+            <div key={i} className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-full bg-dark-500 flex-shrink-0 overflow-hidden border border-gray-700">
                 <Image
                   src={msg.avatar}
                   alt={msg.user}
-                  width={28}
-                  height={28}
+                  width={40}
+                  height={40}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 pt-0.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-gray-300">{msg.user}</span>
-                  <span className="text-[10px] text-gray-600">{msg.time}</span>
+                  <span className="text-sm font-bold text-white">{msg.user}</span>
+                  <span className="text-xs text-gray-500">{msg.time}</span>
                 </div>
-                <p className="text-xs text-gray-400 break-words">{msg.message}</p>
+                <p className="text-sm text-gray-400 break-words mt-0.5">{msg.message}</p>
               </div>
             </div>
           ))}
